@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Criação de Sites</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Meu site para contato.</h1>
+        <p>Transformamos suas ideias em realidade na web!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#porque">Por Que Escolher</a></li>
+            <li><a href="#projetos">Meus projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="servicos">
+        <h2>Meus Serviços</h2>
+        <ul>
+            <li>Criação de Sites Personalizados</li>
+            <li>Lojas Virtuais</li>
+            <li>Design Responsivo</li>
+            <li>Manutenção e Suporte</li>
+            <li>Design para posts</li>
+        </ul>
+    </section>
+
+    <section id="porque">
+        <h2>Por Que me escolher para fazer seu site?</h2>
+        <ul>
+            <li>Experiência Comprovada</li>
+            <li>Atendimento Personalizado</li>
+            <li>Prazo de Entrega Rápido</li>
+            <li>Preços Competitivos</li>
+        </ul>
+    </section>
+
+    <section id="projetos">
+        <h2>Alguns dos meus projetos</h2>
+        <div class="slider">
+            <div class="slide">
+                <img src="/midia/pizza.png" alt="Projeto 1">
+            </div>
+            <div class="slide">
+                <img src="/midia/nutri.png" alt="Projeto 2">
+            </div>
+            <div class="slide">
+                <img src="/midia/lista.png" alt="Projeto 3">
+            </div>
+            <div class="slide">
+                <img src="/midia/cod.png" alt="Projeto 4">
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Pronto para dar o próximo passo? Fale conosco!</p>
+        <p>Email: luccaandre78@gmail.com</p>
+        <p>Telefone: (19) 98979-9135</p>
+        <p>Endereço: Campinas, São Paulo.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lucca.19nn/" class="social-icon"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="#" class="social-icon"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            <a href="#" class="social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+        <p>&copy; 2024 Site de Lucca. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides[currentIndex].style.opacity = 1;
+        }
+
+        slides.forEach((slide, index) => {
+            slide.style.position = 'absolute';
+            slide.style.width = '100%';
+            slide.style.height = '100%';
+            slide.style.transition = 'opacity 0.5s ease-in-out';
+            slide.style.opacity = index === 0 ? 1 : 0;
+        });
+
+        setInterval(showNextSlide, 3000); // Muda de slide a cada 3 segundos
+    </script>
+</body>
+</html>
